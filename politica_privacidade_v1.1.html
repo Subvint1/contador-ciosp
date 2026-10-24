@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — CIOSP Auto Contador</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #222222;
+      --text: #e0e0e0;
+      --muted: #666666;
+      --accent: #ffffff;
+      --mono: "Courier New", Courier, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      line-height: 1.75;
+      padding: 48px 24px;
+    }
+
+    .wrap { max-width: 720px; margin: 0 auto; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+
+    header .tag {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 22px;
+      color: var(--accent);
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    header .meta {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 13px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before { content: "→  "; color: var(--muted); }
+
+    ul li {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="tag">Extensão Chrome</div>
+    <h1>CIOSP Auto Contador — Política de Privacidade</h1>
+    <div class="meta">Última atualização: outubro de 2026 &nbsp;·&nbsp; Versão 1.1</div>
+  </header>
+
+  <section>
+    <h2>O que esta extensão faz</h2>
+    <p>
+      A extensão <strong>CIOSP Auto Contador</strong> monitora requisições de rede feitas
+      pelo navegador ao sistema SIOPM (<code>portal2.sesp.mt.gov.br</code>) e detecta
+      automaticamente quando uma checagem de qualificação de veículo é realizada.
+      Ao detectar a requisição, ela envia um sinal ao aplicativo CIOSP local (rodando em
+      <code>127.0.0.1:5678</code>) para incrementar o contador de atendimentos.
+    </p>
+  </section>
+
+  <section>
+    <h2>Dados coletados</h2>
+    <p>Esta extensão <strong>não coleta, armazena, transmite nem compartilha</strong> nenhum
+    dado pessoal dos usuários.</p>
+    <ul>
+      <li>Nenhum dado é enviado a servidores externos.</li>
+      <li>Nenhum dado é gravado em disco pela extensão.</li>
+      <li>A comunicação ocorre exclusivamente em <code>localhost</code> (127.0.0.1).</li>
+      <li>Nenhum conteúdo das páginas visitadas é lido ou registrado.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Permissões utilizadas</h2>
+    <ul>
+      <li>
+        <strong>webRequest</strong> — usada para detectar requisições ao endpoint
+        <code>wp_qualificacaoveiculo</code> do SIOPM. Apenas a URL da requisição é verificada;
+        o conteúdo (headers, body, cookies) não é lido.
+      </li>
+      <li>
+        <strong>host_permissions: portal2.sesp.mt.gov.br</strong> — necessária para que o
+        listener de rede funcione exclusivamente no domínio do SIOPM.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Uso dos dados</h2>
+    <p>
+      Nenhum dado pessoal é processado. A única ação da extensão é detectar uma URL
+      específica e enviar um incremento numérico ao aplicativo local. Esse número não
+      está associado a identidade, conteúdo ou histórico de navegação.
+    </p>
+  </section>
+
+  <section>
+    <h2>Compartilhamento com terceiros</h2>
+    <p>
+      Nenhum dado é compartilhado com terceiros. A extensão não usa SDKs de rastreamento,
+      publicidade ou analytics.
+    </p>
+  </section>
+
+  <section>
+    <h2>Segurança</h2>
+    <p>
+      A comunicação entre a extensão e o aplicativo local ocorre exclusivamente em
+      <code>127.0.0.1:5678</code>, inacessível de fora da máquina do usuário.
+    </p>
+  </section>
+
+  <section>
+    <h2>Contato</h2>
+    <p>
+      Em caso de dúvidas sobre esta política, entre em contato pelo e-mail:<br/>
+      <code>victorcesarmq.cuiaba@gmail.com</code>
+    </p>
+  </section>
+
+  <footer>
+    CIOSP Auto Contador &nbsp;·&nbsp; Desenvolvido por Victor César de Morais Queiroz &nbsp;·&nbsp; Cuiabá, MT
+  </footer>
+
+</div>
+</body>
+</html>
