@@ -1,186 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidade — CIOSP Auto Contador</title>
   <style>
-    :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --border: #222222;
-      --text: #e0e0e0;
-      --muted: #666666;
-      --accent: #ffffff;
-      --mono: "Courier New", Courier, monospace;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--mono);
-      line-height: 1.75;
-      padding: 48px 24px;
-    }
-
-    .wrap { max-width: 720px; margin: 0 auto; }
-
-    header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 24px;
-      margin-bottom: 40px;
-    }
-
-    header .tag {
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    h1 {
-      font-size: 22px;
-      color: var(--accent);
-      font-weight: bold;
-      letter-spacing: 0.05em;
-    }
-
-    header .meta {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    section {
-      margin-bottom: 36px;
-    }
-
-    h2 {
-      font-size: 13px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 10px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    p {
-      font-size: 13px;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li::before { content: "→  "; color: var(--muted); }
-
-    ul li {
-      font-size: 13px;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    footer {
-      margin-top: 60px;
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-    }
+    :root { --bg:#ffffff; --text:#151515; --muted:#5f5f5b; --border:#dcdcd8; --mono:ui-monospace,Consolas,"Courier New",monospace; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#0a0a0a; --text:#ececec; --muted:#9a9a9a; --border:#2a2a2a; } }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--text); font-family:var(--mono); line-height:1.7; padding:40px 16px; }
+    .wrap { max-width:720px; margin:0 auto; }
+    header { border-bottom:1px solid var(--border); padding-bottom:20px; margin-bottom:32px; }
+    h1 { font-size:20px; }
+    .meta { font-size:12px; color:var(--muted); margin-top:6px; }
+    section { margin-bottom:28px; }
+    h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; padding-bottom:4px; border-bottom:1px solid var(--border); }
+    p, li { font-size:14px; margin-bottom:8px; }
+    ul { padding-left:20px; }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--border); vertical-align:top; }
+    th { color:var(--muted); font-weight:600; }
+    footer { margin-top:48px; border-top:1px solid var(--border); padding-top:16px; font-size:12px; color:var(--muted); }
   </style>
 </head>
 <body>
 <div class="wrap">
-
   <header>
-    <div class="tag">Extensão Chrome</div>
     <h1>CIOSP Auto Contador — Política de Privacidade</h1>
-    <div class="meta">Última atualização: outubro de 2026 &nbsp;·&nbsp; Versão 1.1</div>
+    <div class="meta">Extensão do Chrome · versão 2.1 · atualizada em outubro de 2026</div>
   </header>
 
   <section>
-    <h2>O que esta extensão faz</h2>
-    <p>
-      A extensão <strong>CIOSP Auto Contador</strong> monitora requisições de rede feitas
-      pelo navegador ao sistema SIOPM (<code>portal2.sesp.mt.gov.br</code>) e detecta
-      automaticamente quando uma checagem de qualificação de veículo é realizada.
-      Ao detectar a requisição, ela envia um sinal ao aplicativo CIOSP local (rodando em
-      <code>127.0.0.1:5678</code>) para incrementar o contador de atendimentos.
-    </p>
+    <h2>O que a extensão faz</h2>
+    <p>O CIOSP Auto Contador conta as checagens de placa que um operador faz no sistema SIOPM
+    (<code>portal2.sesp.mt.gov.br</code>) e envia essa contagem para o painel CIOSP, onde cada
+    operador acompanha a própria produção e a supervisão acompanha a da equipe.</p>
   </section>
 
   <section>
-    <h2>Dados coletados</h2>
-    <p>Esta extensão <strong>não coleta, armazena, transmite nem compartilha</strong> nenhum
-    dado pessoal dos usuários.</p>
+    <h2>Quais dados são tratados</h2>
+    <table>
+      <tr><th>Dado</th><th>Para quê</th><th>Onde fica</th></tr>
+      <tr><td>Login e senha</td><td>Entrar na conta criada pela supervisão. A senha é enviada só ao serviço de autenticação, no momento do login, e não é guardada pela extensão.</td><td>Serviço de autenticação do painel</td></tr>
+      <tr><td>Sessão (token de acesso)</td><td>Manter o login aberto sem pedir a senha a cada checagem.</td><td>No próprio navegador (armazenamento da extensão)</td></tr>
+      <tr><td>Data e hora de cada checagem, com um código aleatório</td><td>Contar a checagem para o operador e para o turno do horário em que foi feita. O código evita contar a mesma checagem duas vezes.</td><td>Banco de dados do painel</td></tr>
+      <tr><td>Nome, login, turno e meta do operador</td><td>Mostrar o total do dia e a meta no ícone e na janela da extensão.</td><td>Banco de dados do painel e cópia no navegador</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>O que a extensão NÃO coleta</h2>
     <ul>
-      <li>Nenhum dado é enviado a servidores externos.</li>
-      <li>Nenhum dado é gravado em disco pela extensão.</li>
-      <li>A comunicação ocorre exclusivamente em <code>localhost</code> (127.0.0.1).</li>
-      <li>Nenhum conteúdo das páginas visitadas é lido ou registrado.</li>
+      <li>Placas, dados de veículos, proprietários ou qualquer conteúdo das telas do SIOPM.</li>
+      <li>Endereços das páginas visitadas, histórico de navegação ou o que acontece em outros sites.</li>
+      <li>Cookies, senhas de outros sistemas, teclado, mouse ou capturas de tela.</li>
+    </ul>
+    <p>A extensão só observa as requisições feitas ao endereço do SIOPM. Ela verifica apenas se a
+    requisição é a da tela de qualificação de veículo e se terminou sem erro. Nada do conteúdo da
+    requisição ou da resposta é lido ou enviado.</p>
+  </section>
+
+  <section>
+    <h2>Quem vê os dados</h2>
+    <ul>
+      <li><strong>O próprio operador</strong> vê o seu histórico completo.</li>
+      <li><strong>Colegas do mesmo turno</strong> veem o total do dia e do mês de cada um no placar do turno.</li>
+      <li><strong>O supervisor do turno</strong> vê o histórico das pessoas do seu turno e o total do turno.</li>
+      <li><strong>O supervisor geral e a administração</strong> veem o histórico de todos e a comparação entre turnos.</li>
+    </ul>
+    <p>Essas regras são aplicadas pelo próprio banco de dados, e não apenas escondidas na tela.</p>
+  </section>
+
+  <section>
+    <h2>Compartilhamento</h2>
+    <p>Os dados não são vendidos, não são usados para publicidade e não são repassados a terceiros.
+    Eles ficam em provedores de infraestrutura contratados para hospedar o painel (banco de dados
+    e hospedagem do site), que apenas os armazenam e processam para o funcionamento do serviço.
+    A extensão não usa ferramentas de análise, rastreamento ou anúncios.</p>
+  </section>
+
+  <section>
+    <h2>Segurança e retenção</h2>
+    <ul>
+      <li>Toda comunicação é feita por HTTPS.</li>
+      <li>As contas são criadas pela supervisão; não há cadastro aberto.</li>
+      <li>Os registros são mantidos enquanto forem necessários para o acompanhamento da produção.
+      A desativação de uma conta bloqueia o acesso imediatamente.</li>
+      <li>Ao sair da extensão (botão "Sair"), a sessão guardada no navegador é apagada.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Permissões utilizadas</h2>
-    <ul>
-      <li>
-        <strong>webRequest</strong> — usada para detectar requisições ao endpoint
-        <code>wp_qualificacaoveiculo</code> do SIOPM. Apenas a URL da requisição é verificada;
-        o conteúdo (headers, body, cookies) não é lido.
-      </li>
-      <li>
-        <strong>host_permissions: portal2.sesp.mt.gov.br</strong> — necessária para que o
-        listener de rede funcione exclusivamente no domínio do SIOPM.
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Uso dos dados</h2>
-    <p>
-      Nenhum dado pessoal é processado. A única ação da extensão é detectar uma URL
-      específica e enviar um incremento numérico ao aplicativo local. Esse número não
-      está associado a identidade, conteúdo ou histórico de navegação.
-    </p>
-  </section>
-
-  <section>
-    <h2>Compartilhamento com terceiros</h2>
-    <p>
-      Nenhum dado é compartilhado com terceiros. A extensão não usa SDKs de rastreamento,
-      publicidade ou analytics.
-    </p>
-  </section>
-
-  <section>
-    <h2>Segurança</h2>
-    <p>
-      A comunicação entre a extensão e o aplicativo local ocorre exclusivamente em
-      <code>127.0.0.1:5678</code>, inacessível de fora da máquina do usuário.
-    </p>
+    <h2>Seus direitos</h2>
+    <p>Você pode pedir acesso, correção ou exclusão dos seus dados ao seu supervisor ou pelo
+    contato abaixo.</p>
   </section>
 
   <section>
     <h2>Contato</h2>
-    <p>
-      Em caso de dúvidas sobre esta política, entre em contato pelo e-mail:<br/>
-      <code>victorcesarmq.cuiaba@gmail.com</code>
-    </p>
+    <p><code>victorcesarmq.cuiaba@gmail.com</code></p>
   </section>
 
-  <footer>
-    CIOSP Auto Contador &nbsp;·&nbsp; Desenvolvido por Victor César de Morais Queiroz &nbsp;·&nbsp; Cuiabá, MT
-  </footer>
-
+  <footer>CIOSP Auto Contador · Cuiabá, MT</footer>
 </div>
 </body>
 </html>
